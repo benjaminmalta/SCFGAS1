@@ -28,6 +28,7 @@ public class customAIMoveScriptGrid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.Find("Target").transform;
 
         Debug.Log(this.name);
 
@@ -48,16 +49,16 @@ public class customAIMoveScriptGrid : MonoBehaviour
         pathToFollow = seeker.StartPath(transform.position, target.position);
 
 
-
+        StartCoroutine(moveTowardsEnemy(this.transform));
         //update the graph as soon as you can.  Runs indefinitely
         StartCoroutine(updateGraph());
 
         //move the red robot towards the green enemy
-        StartCoroutine(moveTowardsEnemy(this.transform));
+        
     }
 
 
-
+    
 
 
     IEnumerator updateGraph()
