@@ -17,17 +17,40 @@ public class GameManger : MonoBehaviour
         {
             Task1();
         }
+        if (SceneManager.GetActiveScene().name == "Task2")
+        {
+            Task2();
+        }
     }
+
 
     private void Task1() 
     {
         //The order of executution of these methods is intentional to 
-        //Ensure that first the obstacles are generated then scanned 
+        
         ObstacleGenerator(5);
-        Scan();
+        //Scan(); No need as the custom AIMoveScript automatically scans constantly 
         StartExample();
 
     }
+    private void Task2()
+    {
+        AIGenerator(10);
+        //Scan(); No need as the custom AIMoveScript automatically scans constantly 
+        StartExample();
+
+         
+        /* TASK 2 KU 1
+         *  Local avoidance is a built in A* Pathfinding feature only available on A* pathfinding pro. It is based 
+         *  on RVO: Reciprocal Velocity Obstacles. This is based on two parts, the first being simulation code 
+         *  which has very little to do with unity specific classes, while the second part has much more to do 
+         *  with the unity interface.   
+         */
+
+
+
+    }
+
 
     private void ObstacleGenerator(int obstacles) 
     {
@@ -38,13 +61,13 @@ public class GameManger : MonoBehaviour
     }
 
 
-
-
-
-
-
-
-
+    private void AIGenerator(int ai)
+    {
+        for (int i = 0; i < ai; i++)
+        {
+            AddAI();
+        }
+    }
 
     public void Scan() {
         GameObject.Find("AStarGrid").GetComponent<AstarPath>().Scan();
