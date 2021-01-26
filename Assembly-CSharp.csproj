@@ -69,7 +69,7 @@
     <Compile Include="Assets\customAIMoveScriptGrid.cs" />
     <Compile Include="Assets\obstacleMovementScript.cs" />
     <Compile Include="Assets\Resources\Scripts\UIScripts\startGameController.cs" />
-    <Compile Include="Assets\Assignment 1\Scripts\GameManger.cs" />
+    <Compile Include="Assets\Assignment 1\Scripts\TASK 1\GameManger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

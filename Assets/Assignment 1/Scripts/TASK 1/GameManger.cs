@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManger : MonoBehaviour
@@ -9,6 +10,41 @@ public class GameManger : MonoBehaviour
     public GameObject obstacleObject;
     
     List<Vector3> positionRecord = new List<Vector3> { };
+
+    private void Start()
+    {
+        if(SceneManager.GetActiveScene().name == "Task1")
+        {
+            Task1();
+        }
+    }
+
+    private void Task1() 
+    {
+        //The order of executution of these methods is intentional to 
+        //Ensure that first the obstacles are generated then scanned 
+        ObstacleGenerator(5);
+        Scan();
+        StartExample();
+
+    }
+
+    private void ObstacleGenerator(int obstacles) 
+    {
+        for (int i = 0; i < obstacles; i++)
+        {
+            AddObstacle();
+        }
+    }
+
+
+
+
+
+
+
+
+
 
     public void Scan() {
         GameObject.Find("AStarGrid").GetComponent<AstarPath>().Scan();
