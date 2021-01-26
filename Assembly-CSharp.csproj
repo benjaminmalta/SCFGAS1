@@ -63,13 +63,14 @@
     <Compile Include="Assets\Resources\Scripts\squareGenerator.cs" />
     <Compile Include="Assets\exerciseScript.cs" />
     <Compile Include="Assets\Resources\Scripts\snakeheadController.cs" />
+    <Compile Include="Assets\Assignment 1\Scripts\TASK 1\GameManger.cs" />
     <Compile Include="Assets\Resources\Scripts\UIScripts\eventsController.cs" />
     <Compile Include="Assets\customAIMoveScript.cs" />
     <Compile Include="Assets\Resources\Scripts\UIScripts\timerManager.cs" />
     <Compile Include="Assets\customAIMoveScriptGrid.cs" />
-    <Compile Include="Assets\obstacleMovementScript.cs" />
+    <Compile Include="Assets\Assignment 1\Scripts\obstacleMovementScript.cs" />
     <Compile Include="Assets\Resources\Scripts\UIScripts\startGameController.cs" />
-    <Compile Include="Assets\Assignment 1\Scripts\TASK 1\GameManger.cs" />
+    <Compile Include="Assets\Assignment 1\Scripts\KU4PatrolBehaviourScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
