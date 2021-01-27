@@ -67,17 +67,12 @@ public class KU4PatrolBehaviourScript : MonoBehaviour
        
         if (this.transform.position == waypoints[index].position) 
         {
-            if (index < 10)
-            {
-                index++;
-                print("Incremented Index");
-            }
-            else {
+            index++;
+            if (index > 9) {
                 index = 0;
-                print("Reset Index");
             }
 
-
+            pathToFollow = seeker.StartPath(transform.position, waypoints[index].position);
 
         }
 
@@ -137,11 +132,8 @@ public class KU4PatrolBehaviourScript : MonoBehaviour
                 //keep looking for a path because if we have arrived the enemy will anyway move away
                 //This code allows us to keep chasing
                 pathToFollow = seeker.StartPath(t.position, waypoints[index].position);
-                
                 yield return seeker.IsDone();
                 posns = pathToFollow.vectorPath;
-
-
                 //yield return null;
 
             }
