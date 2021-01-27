@@ -7,6 +7,7 @@ public class KU4PatrolBehaviourScript : MonoBehaviour
 {
 
     public List<Transform> waypoints;
+   
     private int index = 0;
 
 
